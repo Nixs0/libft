@@ -6,7 +6,7 @@
 #    By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:48:23 by jkaruk-m          #+#    #+#              #
-#    Updated: 2021/05/21 15:48:27 by jkaruk-m         ###   ########.fr        #
+#    Updated: 2021/05/24 14:51:14 by jkaruk-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ SRCS = ft_isalnum.c \
        		ft_putstr_fd.c \
        		ft_putendl_fd.c \
        		ft_putnbr_fd.c \
+       		ft_split.c \
+       		ft_itoa.c \
 
 BONUS = ${PATH_SRCS}/ft_lstadd_front.c ${PATH_SRCS}/ft_lstlast.c ${PATH_SRCS}/ft_lstadd_back.c\
  ${PATH_SRCS}/ft_lstdelone.c ${PATH_SRCS}/ft_lstclear.c ${PATH_SRCS}/ft_lstiter.c ${PATH_SRCS}/ft_lstmap.c\

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/24 15:16:39 by jkaruk-m          #+#    #+#             */
+/*   Updated: 2021/05/24 16:15:03 by jkaruk-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_len(int n)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	if (n < 0)
 	{
@@ -14,28 +26,14 @@ int	ft_len(int n)
 		len++;
 	while (n > 0)
 	{
-		n = n/10;
+		n = n / 10;
 		len++;
 	}
-	return(len);
+	return (len);
 }
 
-char	*ft_itoa(int n)
+void	ft_handle_nbr(int nbr, char *res, int len)
 {
-	int nbr;
-	int len;
-	char *res;
-	
-	nbr = n;
-	len = ft_len(nbr);
-	res = (char *)malloc(sizeof(char) * (len + 1));
-	if(!res)
-		return(NULL);
-	res[len--] = '\0';
-if (nbr == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (nbr == 0)
-		res[0] = '0';
 	if (nbr < 0)
 	{
 		res[0] = '-';
@@ -47,5 +45,24 @@ if (nbr == -2147483648)
 		nbr = nbr / 10;
 		len--;
 	}
-	return(res);
+}
+
+char	*ft_itoa(int n)
+{
+	int		nbr;
+	int		len;
+	char	*res;
+
+	nbr = n;
+	len = ft_len(nbr);
+	res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!res)
+		return (NULL);
+	if (nbr == -2147483648)
+		return (ft_strdup("-2147483648"));
+	res[len--] = '\0';
+	if (nbr == 0)
+		res[0] = '0';
+	ft_handle_nbr(nbr, res, len);
+	return (res);
 }
