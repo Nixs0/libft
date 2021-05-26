@@ -52,6 +52,10 @@ SRCS = ft_isalnum.c \
        		ft_putnbr_fd.c \
        		ft_split.c \
        		ft_itoa.c \
+       		ft_substr.c \
+       		ft_strtrim.c \
+       		ft_strmapi.c \
+       		ft_strjoin.c \
 
 BONUS = ${PATH_SRCS}/ft_lstadd_front.c ${PATH_SRCS}/ft_lstlast.c ${PATH_SRCS}/ft_lstadd_back.c\
  ${PATH_SRCS}/ft_lstdelone.c ${PATH_SRCS}/ft_lstclear.c ${PATH_SRCS}/ft_lstiter.c ${PATH_SRCS}/ft_lstmap.c\
