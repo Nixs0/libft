@@ -6,7 +6,7 @@
 #    By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:48:23 by jkaruk-m          #+#    #+#              #
-#    Updated: 2021/05/24 14:51:14 by jkaruk-m         ###   ########.fr        #
+#    Updated: 2021/05/27 15:25:22 by nixs0            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ OPTIONS = -I${PATH_HEADERS}
 
 LIB_CREATOR_COMMAND = ar
 RM_COMMAND = rm -f
+
+OBJS = ${SRCS:.c=.o}
+BONUS_OBJS = ${BONUS:.c=.o}
 
 SRCS = ft_isalnum.c \
        		ft_isalpha.c \
@@ -57,13 +60,12 @@ SRCS = ft_isalnum.c \
        		ft_strmapi.c \
        		ft_strjoin.c \
 
-BONUS = ${PATH_SRCS}/ft_lstadd_front.c ${PATH_SRCS}/ft_lstlast.c ${PATH_SRCS}/ft_lstadd_back.c\
- ${PATH_SRCS}/ft_lstdelone.c ${PATH_SRCS}/ft_lstclear.c ${PATH_SRCS}/ft_lstiter.c ${PATH_SRCS}/ft_lstmap.c\
- ${PATH_SRCS}/ft_lstnew.c ${PATH_SRCS}/ft_lstsize.c
-OBJS = ${SRCS:.c=.o}
-BONUS_OBJS = ${BONUS:.c=.o}
+BONUS = ft_lstadd_back.c \
+       		ft_lstsize.c \
+       		ft_lstmap.c \
 
 all: ${NAME}
+
 .c.o: ${OBJS} ${BONUS_OBJS}
 	${COMPILER_COMMAND} ${OPTIONS} ${FLAGS} -c $< -o ${<:.c=.o}
 

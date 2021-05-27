@@ -10,28 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	check_of(char *str)
+{
+	size_t	c;
+	
+	c = 0;
+	while (str[c] && ft_isdigit(str[c]))
+		c++;
+	if (c >= 20)
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	res;
 	int	sign;
-	int	i;
 
 	res = 0;
 	sign = 1;
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
 	{
 		sign = -sign;
-		i++;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	if (check_of((char *)str))
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		if (sign == -1)
+			return (0);
+		return (-1);
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + *str - '0';
+		str++;
 	}
 	return (sign * res);
 }

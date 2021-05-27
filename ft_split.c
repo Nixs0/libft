@@ -1,10 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/27 13:18:42 by nixs0             #+#    #+#             */
+/*   Updated: 2021/05/27 13:18:43 by nixs0            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int		is_sep(char c, char str)
 {
-	int i;
-
-	i = 0;
 	if (str == c)
 		return (1);
 	else
@@ -19,7 +28,7 @@ int get_table_len(char *str, char c)
 
 	i = 0;
 	words_len = 0;
-	while(str[i] && is_sep(*str, c))
+	while(str[i] && is_sep(str[i], c))
 		i++;
 	while (str[i])
 	{
@@ -88,7 +97,8 @@ char **ft_split(char const *s, char c)
 	str = (char *)s;
 	table_len = get_table_len(str, c);
 	//printf("%d\n", table_len);
-	if (!(tab = (char **)malloc(sizeof(char *) * (table_len + 1))))
+	tab = (char **)malloc(sizeof(char *) * (table_len + 1));
+	if(!tab)
 		return (NULL);
 	fill_words(&tab, str, c);
 	tab[table_len] = NULL;
