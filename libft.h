@@ -6,7 +6,7 @@
 /*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:27:46 by jkaruk-m          #+#    #+#             */
-/*   Updated: 2021/05/27 16:46:05 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/27 19:51:46 by nixs0            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void *content;
-	struct s_list *next;
+	void			*content;
+	struct s_list	*next;
 }				t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
@@ -44,7 +44,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
@@ -60,12 +60,10 @@ char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_strmapi(char const *s, char (*f)(unsigned
-int, char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-t_list				*ft_lstnew(void *content);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-								 void (*del)(void *));
-t_list				*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstlast(t_list *lst);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:18:42 by nixs0             #+#    #+#             */
-/*   Updated: 2021/05/27 13:18:43 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/27 17:22:04 by nixs0            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_sep(char c, char str)
+int	is_sep(char c, char str)
 {
 	if (str == c)
 		return (1);
@@ -20,15 +20,15 @@ int		is_sep(char c, char str)
 		return (0);
 }
 
-int get_table_len(char *str, char c)
+int	get_table_len(char *str, char c)
 {
-	size_t words_len;
-	int i;
-	int letters;
+	size_t	words_len;
+	int		i;
+	int		letters;
 
 	i = 0;
 	words_len = 0;
-	while(str[i] && is_sep(str[i], c))
+	while (str[i] && is_sep(str[i], c))
 		i++;
 	while (str[i])
 	{
@@ -39,36 +39,37 @@ int get_table_len(char *str, char c)
 		{
 			i += letters;
 			words_len++;
-			continue;
+			continue ;
 		}
 		i++;
 	}
-	return words_len;
+	return (words_len);
 }
 
-char *ft_strdupp(char *str, int index, int len)
+char	*ft_strdupp(char *str, int index, int len)
 {
-	int i;
-	char *ret;
+	int		i;
+	char	*copied;
 
 	i = 0;
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
+	copied = (char *)malloc(sizeof(char) * (len + 1));
+		if (!copied)
 		return (NULL);
 	while (i < len)
-		ret[i++] = str[index++];
-	ret[i] = 0;
-	return ret;
+		copied[i++] = str[index++];
+	copied[i] = 0;
+	return (copied);
 }
 
-void fill_words(char ***tab, char *str, char c)
+void	fill_words(char ***tab, char *str, char c)
 {
-	int i;
-	int word_len;
-	int tab_index;
+	int	i;
+	int	word_len;
+	int	tab_index;
 
 	i = 0;
 	tab_index = 0;
-	while(str[i] && is_sep(str[i], c))
+	while (str[i] && is_sep(str[i], c))
 		i++;
 	while (str[i])
 	{
@@ -80,29 +81,28 @@ void fill_words(char ***tab, char *str, char c)
 			(*tab)[tab_index] = ft_strdupp(str, i, word_len);
 			i += word_len;
 			tab_index++;
-			continue;
+			continue ;
 		}
 		i++;
 	}
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int table_len;
-	char **tab;
-	char *str;
+	int		table_len;
+	char	**tab;
+	char	*str;
 
 	if (!s || !c)
-		return(NULL);
+		return (NULL);
 	str = (char *)s;
 	table_len = get_table_len(str, c);
-	//printf("%d\n", table_len);
 	tab = (char **)malloc(sizeof(char *) * (table_len + 1));
-	if(!tab)
+	if (!tab)
 		return (NULL);
 	fill_words(&tab, str, c);
 	tab[table_len] = NULL;
-	return tab;
+	return (tab);
 }
 
 /*int main(int ac, char **av)

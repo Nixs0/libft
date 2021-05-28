@@ -1,10 +1,10 @@
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str;
-	char *joined;
-	int len;
+	char	*str;
+	char	*joined;
+	int		len;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -18,5 +18,5 @@ char *ft_strjoin(char const *s1, char const *s2)
 	while (*s2)
 		*joined++ = *s2++;
 	*joined = 0;
-	return(str);
+	return (str);
 }

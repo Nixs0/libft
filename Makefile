@@ -6,7 +6,7 @@
 #    By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:48:23 by jkaruk-m          #+#    #+#              #
-#    Updated: 2021/05/27 15:25:22 by nixs0            ###   ########.fr        #
+#    Updated: 2021/05/27 20:03:15 by nixs0            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,15 @@ SRCS = ft_isalnum.c \
        		ft_strmapi.c \
        		ft_strjoin.c \
 
-BONUS = ft_lstadd_back.c \
-       		ft_lstsize.c \
-       		ft_lstmap.c \
+BONUS = ft_lstnew.c \
+        	ft_lstsize.c \
+        	ft_lstlast.c \
+        	ft_lstadd_front.c \
+        	ft_lstadd_back.c \
+        	ft_lstdelone.c \
+        	ft_lstiter.c \
+        	ft_lstmap.c \
+        	ft_lstclear.c \
 
 all: ${NAME}
 
