@@ -6,7 +6,7 @@
 /*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:23:27 by jkaruk-m          #+#    #+#             */
-/*   Updated: 2021/05/31 14:39:26 by jkaruk-m         ###   ########.fr       */
+/*   Updated: 2021/05/31 17:16:42 by jkaruk-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_lst;
-	t_list	*start_lst;
+	t_list	*lstok;
+	t_list	*lsttier;
 
-	start_lst = NULL;
+	lsttier = NULL;
 	if (lst)
 	{
 		while (lst)
 		{
-			new_lst = ft_lstnew((*f)(lst->content));
-			if (!new_lst)
+			lstok = ft_lstnew((*f)(lst->content));
+			if (!lstok)
 			{
-				ft_lstclear(&start_lst, del);
+				ft_lstclear(&lsttier, del);
 				return (NULL);
 			}
-			ft_lstadd_back(&start_lst, new_lst);
+			ft_lstadd_back(&lsttier, lstok);
 			lst = lst->next;
 		}
 	}
-	return (new_lst);
+	return (lsttier);
 }

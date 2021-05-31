@@ -6,19 +6,19 @@
 /*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 15:48:51 by jkaruk-m          #+#    #+#             */
-/*   Updated: 2021/05/31 14:29:50 by jkaruk-m         ###   ########.fr       */
+/*   Updated: 2021/05/31 17:15:08 by jkaruk-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	check_ws(char **str)
+void	check_ws(const char **str)
 {
 	while ((**str >= 9 && **str <= 13) || **str == ' ')
 		(*str)++;
 }
 
-void	ft_handle_sign(char **str, int *sign)
+void	ft_handle_sign(const char **str, int *sign)
 {
 	if (**str == '+')
 		(*str)++;
@@ -29,7 +29,7 @@ void	ft_handle_sign(char **str, int *sign)
 	}
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	long long	res;
 	int			sign;
