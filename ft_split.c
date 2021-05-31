@@ -6,7 +6,7 @@
 /*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:43:36 by jkaruk-m          #+#    #+#             */
-/*   Updated: 2021/05/31 14:44:00 by jkaruk-m         ###   ########.fr       */
+/*   Updated: 2021/05/31 18:09:34 by jkaruk-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	char	*str;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	str = (char *)s;
 	table_len = get_table_len(str, c);
