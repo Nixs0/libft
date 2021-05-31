@@ -6,7 +6,7 @@
 /*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 15:48:51 by jkaruk-m          #+#    #+#             */
-/*   Updated: 2021/05/31 01:03:25 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/31 14:29:50 by jkaruk-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_handle_sign(char **str, int *sign)
 		(*str)++;
 	else if (**str == '-')
 	{
-		*sign = -*sign;
+		*sign = -(*sign);
 		(*str)++;
 	}
 }
@@ -32,13 +32,12 @@ void	ft_handle_sign(char **str, int *sign)
 int	ft_atoi(char *str)
 {
 	long long	res;
-	int	sign;
-	int 		compteur;
+	int			sign;
+	int			compteur;
 
 	res = 0;
 	sign = 1;
 	compteur = 0;
-	
 	check_ws(&str);
 	ft_handle_sign(&str, &sign);
 	while (*str >= '0' && *str <= '9')

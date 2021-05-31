@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/27 13:18:42 by nixs0             #+#    #+#             */
-/*   Updated: 2021/05/31 01:03:25 by nixs0            ###   ########.fr       */
+/*   Created: 2021/05/31 14:43:36 by jkaruk-m          #+#    #+#             */
+/*   Updated: 2021/05/31 14:44:00 by jkaruk-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strdupp(char *str, int index, int len)
 
 	i = 0;
 	copied = (char *)malloc(sizeof(char) * (len + 1));
-		if (!copied)
+	if (!copied)
 		return (NULL);
 	while (i < len)
 		copied[i++] = str[index++];
@@ -104,18 +104,3 @@ char	**ft_split(char const *s, char c)
 	tab[table_len] = NULL;
 	return (tab);
 }
-
-/*int main(int ac, char **av)
-{
-	(void)ac;
-	char **tab = ft_split(av[1], av[2][0]);
-	int index = 0;
-	while (tab[index])
-	{
-		printf("mot numero %d : |%s|\n", index, tab[index]);
-		free(tab[index]);
-		index++;
-	}
-	//free(tab);
-	return 0;
-}*/

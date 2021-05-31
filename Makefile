@@ -6,7 +6,7 @@
 #    By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:48:23 by jkaruk-m          #+#    #+#              #
-#    Updated: 2021/05/31 02:02:31 by nixs0            ###   ########.fr        #
+#    Updated: 2021/05/31 14:20:24 by jkaruk-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ BONUS = ft_lstnew.c \
         	ft_lstadd_front.c \
         	ft_lstadd_back.c \
         	ft_lstclear.c \
-#        	ft_lstmap.c \
+        	ft_lstmap.c \
 
 all: ${NAME}
 

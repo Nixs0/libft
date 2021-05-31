@@ -6,7 +6,7 @@
 /*   By: jkaruk-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:27:46 by jkaruk-m          #+#    #+#             */
-/*   Updated: 2021/05/31 01:03:25 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/31 14:33:19 by jkaruk-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstadd_back(t_list **alst, t_list *new);
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
