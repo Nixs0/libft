@@ -6,7 +6,7 @@
 /*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:18:37 by nixs0             #+#    #+#             */
-/*   Updated: 2021/05/27 15:32:40 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/31 01:28:54 by nixs0            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	lst_num;
 
 	lst_num = 0;
-	while (lst)
+	while (lst != NULL)
 	{
 		lst = lst->next;
 		lst_num++;

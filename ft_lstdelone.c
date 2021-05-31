@@ -6,7 +6,7 @@
 /*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 16:43:56 by nixs0             #+#    #+#             */
-/*   Updated: 2021/05/27 16:44:15 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/31 01:37:46 by nixs0            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (lst != NULL && del != NULL)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

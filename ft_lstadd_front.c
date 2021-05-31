@@ -6,7 +6,7 @@
 /*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 16:41:13 by nixs0             #+#    #+#             */
-/*   Updated: 2021/05/27 16:41:25 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/31 02:02:21 by nixs0            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,7 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
+	if (alst != NULL)
+		new->next = *alst;
+	*alst = new;
 }

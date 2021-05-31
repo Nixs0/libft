@@ -6,7 +6,7 @@
 /*   By: nixs0 <nixs0@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 17:15:24 by nixs0             #+#    #+#             */
-/*   Updated: 2021/05/27 17:15:24 by nixs0            ###   ########.fr       */
+/*   Updated: 2021/05/31 01:03:25 by nixs0            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,7 +16,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	str = malloc(ft_strlen(s) + 1);
 	if (str == NULL)
